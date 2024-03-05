@@ -36,8 +36,7 @@ jobs:
           path: quartz
       - name: Clean Quartz content
         working-directory: quartz
-        run: |
-          rm -rf content
+        run: rm -rf content
       - name: Checkout this repo
         uses: actions/checkout@v4
         with:
@@ -48,14 +47,12 @@ jobs:
           node-version: 18
       - name: Install node dependencies
         working-directory: quartz
-        run: |
-          npm install
+        run: npm install
       - name: Build Quartz site
         working-directory: quartz
-        run: |
-          npx quartz build --bundleInfo
         env:
           TZ: America/New_York
+        run: npx quartz build --bundleInfo
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
