@@ -1,5 +1,5 @@
 ---
-title: My Quartz Development Environment
+title: My Quartz Dev Environment
 date: "2024-03-05T01:03:32-0500"
 ---
 
