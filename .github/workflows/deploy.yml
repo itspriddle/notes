@@ -58,6 +58,8 @@ jobs:
         working-directory: quartz
         run: |
           npx quartz build --bundleInfo
+        env:
+          TZ: America/New_York
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
