@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+# Usage: obsidian [file]
+
+set -e
+
+if [[ "$DEBUG" ]]; then
+  export PS4='+ [${BASH_SOURCE##*/}:$LINENO] '
+  set -x
+fi
+
+if [[ "$1" =~ ^(-h|--help)$ ]]; then
+  sed -ne '/^#/!q;s/^#$/# /;/^# /s/^# //p' < "$0" |
+    awk -v f="${1//-/}" 'f == "h" && $1 == "Usage:" { print; exit }; f != "h"'
+  exit 0
+fi
+
+# URL encodes the given string
+#
+# $1 - string to encode
+urlencode() {
+  if type jq &> /dev/null; then
+    jq -sRr @uri <<< "$1" | sed "s/%0A$//"
+  elif type python3 &> /dev/null; then
+    python3 -c "import sys, urllib.parse as ul; print(ul.quote(sys.argv[1]))" "$1"
+  elif type php &> /dev/null; then
+    php -r "echo rawurlencode(\$argv[1]);" "$1"
+  else
+    # TODO: this won't handle emojis
+    local LC_ALL=C
+
+    for (( i = 0; i < ${#1}; i++ )); do
+      : "${1:i:1}"
+      case "$_" in
+        [a-zA-Z0-9.~_-]) printf '%s' "$_" ;;
+        *) printf '%%%02X' "'$_" ;;
+      esac
+    done
+
+    printf '\n'
+  fi
+}
+
+obsidian() {
+  local query="${1-}"
+
+  if [[ "$query" ]]; then
+    query="&$query"
+  fi
+
+  open "obsidian://open?vault=${OBSIDIAN_VAUT:-xyz.priddle.notes}$query"
+}
+
+main() {
+  local file query
+
+  case "${1-open}" in
+    root)
+      git rev-parse --show-toplevel
+      ;;
+    open)
+      obsidian
+      ;;
+    *)
+      file="$1"
+      obsidian "file=$(urlencode "$file")"
+      ;;
+  esac
+}
+
+main "$@"
