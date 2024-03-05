@@ -79,9 +79,14 @@ jobs:
         run: npm install
 
       # Build the Quartz site in the quartz/public directory.
+      #
+      # Note: TZ gets set to my local timezone so `date` in frontmatter
+      # correctly renders in Quartz pages
       - name: Build Quartz site
         working-directory: quartz
         run: npx quartz build --bundleInfo
+        env:
+          TZ: America/New_York
 
       # Upload a GitHub Actions artifact for the built site.
       - name: Upload artifact
