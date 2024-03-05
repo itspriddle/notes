@@ -1,5 +1,9 @@
 {
   "accentColor": "",
   "cssTheme": "Minimal",
-  "theme": "moonstone"
+  "theme": "moonstone",
+  "enabledCssSnippets": [
+    "sf-mono"
+  ],
+  "baseFontSize": 13
 }
