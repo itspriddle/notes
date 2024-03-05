@@ -1,6 +1,6 @@
 ---
 title: Hosting Quartz on GitHub Pages
-date: "Mon Mar 04 21:04:49 -0500 2024"
+date: "2024-03-04T23:29:00-0500"
 ---
 
 I found [Quartz][1] the other day and wanted to give it a try.
