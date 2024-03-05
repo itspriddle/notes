@@ -1,4 +1,5 @@
 {
   "minimal-style@@tabs-style": "tabs-modern",
-  "minimal-style@@ribbon-style": "ribbon-hidden"
+  "minimal-style@@ribbon-style": "ribbon-hidden",
+  "minimal-style@@file-header-visibility": "minimal-tab-title-visible"
 }
