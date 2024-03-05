@@ -11,11 +11,9 @@ First, I forked Quartz from [jackyzha0/quartz][2] to [itspriddle/quartz][3].
 
 Next, I created a repository for my notes, [itspriddle/notes.priddle.xyz][4].
 
-In the notes repository, I enabled GitHub Pages using Actions. I also setup my
-domain name.
+In the notes repository, I enabled GitHub Pages using Actions. I also setup my domain name.
 
-To build the site, GitHub Actions workflow is needed to set everything up and
-compile the site. I created `.github/workflows/deploy.yml`:
+To build the site, GitHub Actions workflow is needed to set everything up and compile the site. I created `.github/workflows/deploy.yml`:
 
 ```yaml
 name: Deploy Quartz site to GitHub Pages
@@ -114,8 +112,14 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-With the workflow setup, every push on this (itspriddle/notes.priddle.xyz)
-project will trigger a build and deployment of the Quartz site.
+With the workflow setup, every push on this (itspriddle/notes.priddle.xyz) project will trigger a build and deployment of the Quartz site.
+
+---
+
+More notes:
+
+- Ran `git update-index --assume-unchanged content/.gitkeep` and then `ln -s ~/Sites/xyz.priddle.notes content` on my local machine. That way when I'm playing with Quartz itself, it will have a copy of my notes present.
+- I added `/content` to `.git/info/exclude` to tell git to ignore the symlink.
 
 [1]: https://quartz.jzhao.xyz
 [2]: http://github.com/jackyzha0/quartz
