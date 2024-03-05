@@ -5,15 +5,15 @@ date: "2024-03-04T23:29:00-0500"
 
 I found [Quartz][1] the other day and wanted to give it a try.
 
-I wanted to keep my notes separate from the actual Quartz app code.
+I wanted to keep my notes separate from the actual Quartz app code. If I switch the backend out someday, I don't want application code cluttering my repo history.
 
-First, I forked Quartz from [jackyzha0/quartz][2] to [itspriddle/quartz][3].
+First, I forked Quartz from [`jackyzha0/quartz`][2] to [`itspriddle/quartz`][3].
 
-Next, I created a repository for my notes, [itspriddle/notes.priddle.xyz][4].
+Next, I created a repository for my notes, [`itspriddle/notes.priddle.xyz`][4].
 
-In the notes repository, I enabled GitHub Pages using Actions. I also setup my domain name.
+In `itspriddle/notes.priddle.xyz`, I enabled GitHub Pages using Actions. I also set my domain name and configured DNS for it.
 
-To build the site, GitHub Actions workflow is needed to set everything up and compile the site. I created `.github/workflows/deploy.yml`:
+To build the site, GitHub Actions workflow is needed to set everything up and compile the site. I created `.github/workflows/deploy.yml` in `itspriddle/notes.priddle.xyz`:
 
 ```yaml
 name: Deploy Quartz site to GitHub Pages
@@ -58,8 +58,7 @@ jobs:
       # .gitkeep file
       - name: Clean Quartz content
         working-directory: quartz
-        run: |
-          rm -rf content
+        run: rm -rf content
 
       # git checkout itspriddle/notes.priddle.xyz into the quartz/content
       # directory
@@ -67,12 +66,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: quartz/content
-
-      # I want a README on GitHub but not on my Quartz site. Delete it.
-      - name: Clean internal files
-        working-directory: quartz/content
-        run: |
-          rm -f README.md
 
       # Setup Node.js 18 to run the Quartz project.
       - name: Setup Node
@@ -83,14 +76,12 @@ jobs:
       # Install npm dependencies for Quartz.
       - name: Install node dependencies
         working-directory: quartz
-        run: |
-          npm install
+        run: npm install
 
       # Build the Quartz site in the quartz/public directory.
       - name: Build Quartz site
         working-directory: quartz
-        run: |
-          npx quartz build --bundleInfo
+        run: npx quartz build --bundleInfo
 
       # Upload a GitHub Actions artifact for the built site.
       - name: Upload artifact
@@ -112,7 +103,33 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-With the workflow setup, every push on this (itspriddle/notes.priddle.xyz) project will trigger a build and deployment of the Quartz site.
+With the workflow setup, every push on `itspriddle/notes.priddle.xyz` will trigger a build and deployment of the Quartz site.
+
+I'm also hacking on Quartz itself. I wanted a quick way to have pushes to `itspriddle/quartz` trigger a deploy on `itspriddle/notes.priddle.xyz`.
+
+```yaml
+name: Deploy site
+
+on:
+  push:
+    branches:
+      - v4
+
+jobs:
+  deploy:
+    if: ${{ github.repository == 'itspriddle/quartz' }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Build itspriddle/notes.priddle.xyz
+        run: gh workflow run deploy.yml -R itspriddle/notes.priddle.xyz
+        env:
+          # https://github.com/settings/tokens?type=beta
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+```
+
+For `gh` to be able to work on a remote repository, I had to setup a personal access token at <https://github.com/settings/tokens?type=beta> and save it as a repository secret with the name `GH_TOKEN`. I need to play around with `permissions:` in the workflow file to see if using a personal access token can be avoided — I don't want to have to remember to reset the token.
 
 ---
 
