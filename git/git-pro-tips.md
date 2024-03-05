@@ -1,6 +1,7 @@
 ---
 title: Git Pro Tips
-date: "2024-03-05T10:38:59-0500"
+date: "Wed Oct 30 23:03:28 -0400 2019"
+tags: [git]
 ---
 
 # Git Pro Tips
