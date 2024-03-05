@@ -2,9 +2,7 @@
   "accentColor": "",
   "cssTheme": "Minimal",
   "theme": "moonstone",
-  "enabledCssSnippets": [
-    "sf-mono"
-  ],
-  "baseFontSize": 13,
+  "enabledCssSnippets": [],
+  "baseFontSize": 14,
   "showViewHeader": true
 }
