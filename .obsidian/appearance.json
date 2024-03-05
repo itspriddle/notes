@@ -5,5 +5,6 @@
   "enabledCssSnippets": [
     "sf-mono"
   ],
-  "baseFontSize": 13
+  "baseFontSize": 13,
+  "showViewHeader": true
 }
