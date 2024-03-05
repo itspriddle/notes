@@ -1,6 +1,6 @@
 ---
-date: "Tue Apr 03 01:42:27 -0400 2012"
 title: "Splitting git repos with git filter-branch"
+date: "Tue Apr 03 01:42:27 -0400 2012"
 tags: [git]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Reverting a Git Pull
-category: dev
+date: "Mon Sep 20 16:00:00 -0400 2021"
 tags: [git, howto]
 ---
 
