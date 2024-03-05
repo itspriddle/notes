@@ -1,0 +1,10 @@
+{
+  "strictLineBreaks": true,
+  "showInlineTitle": false,
+  "newLinkFormat": "absolute",
+  "attachmentFolderPath": "media",
+  "showLineNumber": false,
+  "trashOption": "local",
+  "useMarkdownLinks": true,
+  "propertiesInDocument": "source"
+}
