@@ -34,6 +34,7 @@ jobs:
         with:
           repository: itspriddle/quartz
           path: quartz
+          ref: v4-josh
       - name: Clean Quartz content
         working-directory: quartz
         run: rm -rf content
