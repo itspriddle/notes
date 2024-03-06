@@ -2,6 +2,7 @@
 title: My Quartz Dev Environment
 date: "2024-03-05T01:03:32-0500"
 ---
+Clone the repos:
 
 ```
 git clone git@github.com:itspriddle/notes.priddle.xyz.git ~/Sites/xyz.priddle.notes
@@ -26,3 +27,15 @@ Run the dev server:
 ```
 npx quartz build --serve --port 8888
 ```
+
+Pull in changes from `jackyzha0/quartz` upstream:
+
+```
+cd ~/Sites/xyz.priddle.notes.quartz
+git remote add upstream https://github.com/jackyzha0/quartz.git
+git fetch upstream v4
+git checkout v4-josh
+git merge --no-ff v4
+```
+
+[upstream]: https://github.com/jackyzha0/quartz
