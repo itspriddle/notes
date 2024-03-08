@@ -1,6 +1,8 @@
 ---
 title: "Vim: Inserting command output"
-date: "Tue Mar 05 16:45:16 -0500 2024"
+date: Tue Mar 05 16:45:16 -0500 2024
+tags:
+  - vim
 ---
 
 Two ways.

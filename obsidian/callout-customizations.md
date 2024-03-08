@@ -1,6 +1,9 @@
 ---
 title: "Obsidian: Callout Customizations"
-date: "2024-03-05T01:03:19-0500"
+date: 2024-03-05T01:03:19-0500
+tags:
+  - obsidian
+  - css
 ---
 
 I wasn't happy with the default styling of Obsidian's callouts, so I hacked together my own.

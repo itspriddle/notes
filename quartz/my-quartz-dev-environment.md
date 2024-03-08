@@ -1,6 +1,10 @@
 ---
 title: My Quartz Dev Environment
-date: "2024-03-05T01:03:32-0500"
+date: 2024-03-05T01:03:32-0500
+tags:
+  - quartz
+  - obsidian
+  - git
 ---
 Clone the repos:
 

@@ -1,6 +1,11 @@
 ---
-title: "Using Direnv to set PHP versions"
-date: "Sat Jun 17 00:06:15 -0400 2023"
+title: Using Direnv to set PHP versions
+date: Sat Jun 17 00:06:15 -0400 2023
+tags:
+  - php
+  - direnv
+  - linux
+  - macos
 ---
 
 I've missed having something like [chruby][2] for use with PHP. I am a huge

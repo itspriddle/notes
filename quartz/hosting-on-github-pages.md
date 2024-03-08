@@ -1,6 +1,10 @@
 ---
 title: Hosting Quartz on GitHub Pages
-date: "2024-03-04T23:29:00-0500"
+date: 2024-03-04T23:29:00-0500
+tags:
+  - quartz
+  - obsidian
+  - github-pages
 ---
 
 I found [Quartz][1] the other day and wanted to give it a try.

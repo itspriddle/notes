@@ -1,7 +1,10 @@
 ---
-title: "Sharing git repos between two system users"
-date: "Wed Jul 26 15:06:30 -0400 2023"
-tags: [git, linux]
+title: Sharing git repos between two system users
+date: Wed Jul 26 15:06:30 -0400 2023
+tags:
+  - git
+  - linux
+  - howto
 ---
 
 I needed a way for two developers to access a git repository on a Linux

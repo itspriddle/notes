@@ -1,6 +1,9 @@
 ---
 title: Callout Tables
-date: "Tue Mar 05 23:09:12 -0500 2024"
+date: Tue Mar 05 23:09:12 -0500 2024
+tags:
+  - obsidian
+  - css
 ---
 A custom `[!table]` callout:
 
@@ -115,4 +118,3 @@ CSS snippet:
 > | ------ | ---------- | ------------- |
 > | Josh   | Magnets    | Pizza         |
 > | Thorin | Cat        | Yes           |
-

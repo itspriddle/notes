@@ -1,7 +1,10 @@
 ---
-title: "Using direnv to set a custom git email for work projects"
-date: "Wed Mar 24 00:03:56 -0400 2021"
-tags: [git, direnv]
+title: Using direnv to set a custom git email for work projects
+date: Wed Mar 24 00:03:56 -0400 2021
+tags:
+  - git
+  - direnv
+  - howto
 ---
 
 I like to specify a different git author email for personal projects and work

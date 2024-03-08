@@ -1,6 +1,8 @@
 ---
 title: New Mac Setup
-date: "Tue Mar 05 21:05:40 -0500 2024"
+date: Tue Mar 05 21:05:40 -0500 2024
+tags:
+  - macos
 ---
 
 Here's what I install when I get a new Mac.

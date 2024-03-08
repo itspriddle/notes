@@ -1,7 +1,10 @@
 ---
-title: "Signing git commits with SSH keys"
-date: "Tue Aug 23 15:23:57 -0400 2022"
-tags: [git, github]
+title: Signing git commits with SSH keys
+date: Tue Aug 23 15:23:57 -0400 2022
+tags:
+  - git
+  - github
+  - howto
 ---
 
 GitHub [announced today][1] that they have added support for signing commits
