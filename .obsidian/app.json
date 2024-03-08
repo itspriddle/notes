@@ -1,11 +1,13 @@
 {
   "strictLineBreaks": true,
-  "showInlineTitle": false,
+  "showInlineTitle": true,
   "newLinkFormat": "absolute",
   "attachmentFolderPath": "media",
   "showLineNumber": true,
   "trashOption": "local",
   "useMarkdownLinks": true,
-  "propertiesInDocument": "source",
-  "showIndentGuide": false
+  "propertiesInDocument": "visible",
+  "showIndentGuide": false,
+  "useTab": false,
+  "vimMode": false
 }
