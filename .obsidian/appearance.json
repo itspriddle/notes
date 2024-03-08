@@ -3,8 +3,9 @@
   "cssTheme": "Minimal",
   "theme": "moonstone",
   "enabledCssSnippets": [
-    "minimal-callouts"
+    "minimal-callouts",
+    "fonts"
   ],
-  "baseFontSize": 14,
+  "baseFontSize": 16,
   "showViewHeader": true
 }

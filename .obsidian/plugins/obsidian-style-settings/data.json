@@ -1,5 +1,8 @@
 {
   "minimal-style@@tabs-style": "tabs-modern",
   "minimal-style@@ribbon-style": "ribbon-hidden",
-  "minimal-style@@file-header-visibility": "minimal-tab-title-visible"
+  "minimal-style@@checkbox-shape": "checkbox-square",
+  "minimal-style@@file-header-visibility": "minimal-tab-title-visible",
+  "minimal-advanced@@font-ui-small": 13,
+  "minimal-advanced@@font-ui-smaller": 11
 }
