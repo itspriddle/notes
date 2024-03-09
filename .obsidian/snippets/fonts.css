@@ -1,0 +1,14 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+@font-face {
+  font-family: ui-monospace;
+  src: local(".AppleSystemUIFontMonospaced-Regular");
+}
+
+body {
+  --font-monospace: ui-monospace,monospace;
+  /* --font-text: var(--font-monospace); */
+}
